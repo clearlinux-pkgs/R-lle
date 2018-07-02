@@ -4,7 +4,7 @@
 #
 Name     : R-lle
 Version  : 1.1
-Release  : 10
+Release  : 11
 URL      : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Summary  : Locally linear embedding
