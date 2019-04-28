@@ -4,17 +4,17 @@
 #
 Name     : R-lle
 Version  : 1.1
-Release  : 17
+Release  : 18
 URL      : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Summary  : Locally linear embedding
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-scatterplot3d
-Requires: R-snowfall
+Requires: R-snow
 BuildRequires : R-scatterplot3d
+BuildRequires : R-snow
 BuildRequires : R-snowfall
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 data into a lower dimensional (intrinsic) space. This package
@@ -30,11 +30,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523313670
+export SOURCE_DATE_EPOCH=1556493450
 
 %install
+export SOURCE_DATE_EPOCH=1556493450
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523313670
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,8 +69,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library lle|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc lle || :
 
 
 %files
