@@ -4,15 +4,15 @@
 #
 Name     : R-lle
 Version  : 1.1
-Release  : 20
+Release  : 21
 URL      : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Summary  : Locally linear embedding
 Group    : Development/Tools
 License  : GPL-3.0
-Requires: R-snow
+Requires: R-scatterplot3d
+Requires: R-snowfall
 BuildRequires : R-scatterplot3d
-BuildRequires : R-snow
 BuildRequires : R-snowfall
 BuildRequires : buildreq-R
 
@@ -29,13 +29,13 @@ data into a lower dimensional (intrinsic) space. This package
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1556493450
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569383954
 
 %install
-export SOURCE_DATE_EPOCH=1556493450
+export SOURCE_DATE_EPOCH=1569383954
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,7 +64,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
