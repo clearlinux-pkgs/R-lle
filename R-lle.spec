@@ -4,7 +4,7 @@
 #
 Name     : R-lle
 Version  : 1.1
-Release  : 21
+Release  : 22
 URL      : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/lle_1.1.tar.gz
 Summary  : Locally linear embedding
@@ -15,6 +15,7 @@ Requires: R-snowfall
 BuildRequires : R-scatterplot3d
 BuildRequires : R-snowfall
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 data into a lower dimensional (intrinsic) space. This package
@@ -30,10 +31,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1569383954
+export SOURCE_DATE_EPOCH=1571855729
 
 %install
-export SOURCE_DATE_EPOCH=1569383954
+export SOURCE_DATE_EPOCH=1571855729
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
